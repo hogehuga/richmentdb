@@ -28,8 +28,10 @@ Import Vulnrichment vulnerability data into a mysql database and make it searcha
     - optional: Let's specify the volume of the container
       - `$ docker volume create richmentDB`
       - `$ docker container run --name richmentdb -v richmentDB:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql -d hogehuga/epss-db`
-- import data from JSON to MySQL
+- createdb and import data from JSON to MySQL
   - `$ docker exec -it richmentdb /bin/bash`
+  - `$ cd /opt/richmentdb/init-scripts`
+  - `$ ./00-createdb.sh`
   - `# cd /opt/richmentdb`
   - `# ./update.sh`
     - It takes about 3 minutes. Take a CUP NOODLE ;-)
