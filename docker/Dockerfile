@@ -4,4 +4,3 @@ RUN microdnf install git wget vim jq
 RUN cd /opt && git clone https://github.com/hogehuga/richmentdb
 RUN cd /opt/richmentdb && git clone https://github.com/cisagov/vulnrichment
 RUN cp /opt/richmentdb/env/.bashrc /root
-RUN cd /opt/richmentdb && /opt/richmentdb/init-scripts/00-createdb.sh
