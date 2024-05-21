@@ -3,10 +3,6 @@
 infile=$1
 outfile="/var/lib/mysql-files/vulnrichment.csv"
 
-if [ -e $outfile ]; then
-  rm $outfile
-fi
-
 # CVE-ID
 cveid=`jq -r '.cveMetadata.cveId // "NULL"' $infile`
 
